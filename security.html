@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Audits | Harold F. B. Tate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Space Mono', 'monospace'] }, colors: { 'basquiat-red': '#E62600' } } } }
+    </script>
+    <style>
+        body { background-color: #fdfdfd; background-image: linear-gradient(to right, #00000010 1px, transparent 1px), linear-gradient(to bottom, #00000010 1px, transparent 1px); background-size: 24px 24px; scroll-behavior: smooth; }
+        .shadow-raw { box-shadow: 4px 4px 0px 0px #000; transition: all 0.15s ease; }
+        .shadow-raw-red { box-shadow: 4px 4px 0px 0px #E62600; transition: all 0.15s ease; }
+        @media (min-width: 768px) { .shadow-raw { box-shadow: 6px 6px 0px 0px #000; } .shadow-raw-red { box-shadow: 6px 6px 0px 0px #E62600; } }
+        .btn-tactile:active { box-shadow: 0px 0px 0px 0px #000 !important; transform: translate(4px, 4px) !important; }
+        @media (min-width: 768px) { .btn-tactile:active { transform: translate(6px, 6px) !important; } }
+    </style>
+</head>
+<body class="text-black font-sans selection:bg-basquiat-red selection:text-white min-h-screen">
+
+    <!-- System Status Marquee -->
+    <div class="w-full border-b-4 border-black bg-basquiat-red text-white font-mono text-[10px] sm:text-xs uppercase font-bold py-2 px-4 flex flex-col sm:flex-row justify-between items-center sm:gap-4 gap-2 z-50">
+        <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap w-full sm:w-auto">
+            <span class="animate-pulse w-2 h-2 bg-white rounded-full inline-block shrink-0"></span>
+            <span class="truncate">STATUS: Open to new roles in Backend Engineering & Architecture.</span>
+        </div>
+        <a href="https://docs.google.com/document/d/15vvQtatVs7_WdBR7vfgpiHwYV_myDOfwKBGR6rbjwZo/edit?usp=sharing" download class="border-2 border-white px-3 py-1 hover:bg-white hover:text-basquiat-red transition-colors whitespace-nowrap flex items-center gap-2 w-full sm:w-auto justify-center">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download CV
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto space-y-16 px-4 py-8 md:p-12 md:pt-8">
+        
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b-4 border-black pb-4">
+            <div class="font-mono font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 14l3-9 5 4 5-4 3 9H4z"></path><path d="M4 18h16"></path></svg>
+                Harold F. B. Tate // 2026
+            </div>
+            <nav class="font-mono text-xs uppercase font-bold flex flex-wrap gap-x-6 gap-y-2">
+                <a href="index.html" class="pb-1 hover:text-basquiat-red transition-colors">01_Home</a>
+                <a href="projects.html" class="pb-1 hover:text-basquiat-red transition-colors">02_Arch</a>
+                <a href="security.html" class="border-b-2 border-black pb-1 hover:text-basquiat-red transition-colors">03_Research</a>
+            </nav>
+        </header>
+
+        <main class="space-y-24">
+            
+            <!-- Page Intro: The Researcher Manifesto -->
+            <section class="relative">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-6">
+                    Systems Decay. <br>
+                    <span class="text-gray-300 relative inline-block">Security<span class="absolute top-1/2 left-0 w-full h-[4px] md:h-[6px] bg-basquiat-red -rotate-1 -translate-y-1/2"></span></span><br>
+                    Is An Asymptote.
+                </h1>
+                
+                <div class="border-4 border-black bg-white p-5 md:p-6 shadow-raw-red relative z-10 md:-ml-2 mt-8 md:w-5/6 mr-2 md:mr-0">
+                    <p class="font-mono text-xs uppercase mb-3 text-basquiat-red font-bold">Log_Entry // Philosophy</p>
+                    <p class="text-base leading-relaxed font-semibold">
+                        Building software is only half the equation. The other half is understanding exactly how it breaks under pressure, concurrency, and adversarial conditions.
+                    </p>
+                    <p class="mt-4 text-sm leading-relaxed text-gray-800 border-l-2 border-basquiat-red pl-3">
+                        As a lifelong learner, my independent research focuses on two pillars: ensuring transactional integrity in high-stakes environments (Fintech), and auditing enterprise architectures for application-layer vulnerabilities.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 RESEARCH: FINANCIAL SYSTEMS
+            =========================================== -->
+            <section>
+                <h2 class="font-mono uppercase font-bold text-lg md:text-xl mb-6 flex items-center gap-4">
+                    Architectural Research
+                    <span class="h-1 flex-grow bg-black"></span>
+                </h2>
+
+                <article class="border-4 border-black bg-white p-5 md:p-6 shadow-raw mr-1 md:mr-0 space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-2">
+                        <h3 class="font-black uppercase text-2xl sm:w-3/4 leading-tight">Transactional Integrity in Financial APIs</h3>
+                        <span class="font-mono text-[10px] md:text-xs font-bold text-white bg-black px-2 py-1 whitespace-nowrap">Whitepaper / Study</span>
+                    </div>
+                    
+                    <p class="text-sm leading-relaxed text-gray-800">
+                        A deep dive into engineering fault-tolerant backend infrastructures for fintech applications. This research evaluates the mitigation of race conditions and double-spending across concurrent distributed systems.
+                    </p>
+
+                    <div class="border-l-4 border-black pl-4 my-4 space-y-2">
+                        <p class="font-mono text-xs text-gray-700">> Exploring PostgreSQL isolation levels (Serializable vs. Read Committed).</p>
+                        <p class="font-mono text-xs text-gray-700">> Distributed locking mechanisms via Redis.</p>
+                        <p class="font-mono text-xs text-gray-700">> Guaranteeing ACID compliance across microservice boundaries.</p>
+                    </div>
+
+                    <div class="mr-1 md:mr-0 mt-6">
+                        <h4 class="font-mono uppercase font-bold text-sm mb-2 border-b-2 border-gray-200 pb-1">Mathematical Idempotency in API Design</h4>
+                        <p class="text-xs leading-relaxed mb-4 text-gray-600">To prevent duplicate transactions, financial POST requests must be mathematically idempotent—meaning multiple identical requests have the same effect as a single request.</p>
+                        <div class="border-2 border-black bg-gray-50 p-4 font-mono text-center overflow-x-auto overflow-y-hidden">
+                            $$ f(f(x)) = f(x) $$
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t-2 border-gray-200">
+                        <a href="YOUR_MEDIUM_LINK" target="_blank" class="btn-tactile inline-flex items-center gap-2 font-mono text-xs md:text-sm uppercase font-bold border-2 border-black bg-black text-white px-5 py-3 hover:bg-basquiat-red transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            Read Full Research Document
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <!-- ==========================================
+                 AUDITS: VULNERABILITY RESEARCH
+            =========================================== -->
+            <section class="pt-8">
+                <h2 class="font-mono uppercase font-bold text-lg md:text-xl mb-6 flex items-center gap-4">
+                    Independent Security Audits
+                    <span class="h-1 flex-grow bg-black"></span>
+                </h2>
+
+                <div class="border-4 border-black bg-black text-white p-4 md:p-5 font-mono text-[10px] md:text-xs leading-relaxed mb-8 flex gap-3 shadow-raw mr-1 md:mr-0">
+                    <svg class="w-6 h-6 shrink-0 text-basquiat-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <p>> HTTP 200 OK: All independent vulnerability research is conducted ethically. Exploits are never weaponized. Full findings are prepared strictly for responsible disclosure to authorized infrastructure owners.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mr-1 md:mr-0">
+                    
+                    <!-- FNE Audit -->
+                    <article class="border-2 border-black bg-white flex flex-col shadow-raw">
+                        <div class="p-5 border-b-2 border-black bg-gray-50">
+                            <h3 class="font-mono text-base md:text-lg font-bold uppercase mb-1">Target // FNE</h3>
+                            <p class="text-xs font-mono text-gray-500">National Enterprise Platform</p>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col">
+                            <div class="mb-4 space-y-2">
+                                <p class="text-sm"><span class="font-bold">Vector:</span> Application-Layer</p>
+                                <p class="text-sm"><span class="font-bold">OWASP:</span> Broken Access Control</p>
+                            </div>
+                            <p class="font-mono text-xs text-gray-700 leading-relaxed border-l-2 border-basquiat-red pl-3 mt-auto">
+                                Audited the infrastructure and discovered systemic Insecure Direct Object Reference (IDOR) vulnerabilities, leaving job-seeker databases exposed to automated, unauthorized scraping pipelines.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- MTNOBC Audit -->
+                    <article class="border-2 border-black bg-white flex flex-col shadow-raw">
+                        <div class="p-5 border-b-2 border-black bg-gray-50">
+                            <h3 class="font-mono text-base md:text-lg font-bold uppercase mb-1">Target // MTNOBC</h3>
+                            <p class="text-xs font-mono text-gray-500">Corporate Web Infrastructure</p>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col">
+                            <div class="mb-4 space-y-2">
+                                <p class="text-sm"><span class="font-bold">Vector:</span> Auth / Session Mgmt</p>
+                                <p class="text-sm"><span class="font-bold">OWASP:</span> Security Misconfiguration</p>
+                            </div>
+                            <p class="font-mono text-xs text-gray-700 leading-relaxed border-l-2 border-basquiat-red pl-3 mt-auto">
+                                Identified critical web platform security flaws regarding improper session validation and authorization checks, leading to severe application-layer data exposure vectors.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+                
+                <div class="mt-10 mr-1 md:mr-0 text-center">
+                    <a href="mailto:hbankwe@gmail.com?subject=Requesting%20Security%20Audit%20Reports" class="btn-tactile inline-flex items-center justify-center w-full md:w-auto gap-2 font-mono text-xs md:text-sm uppercase font-bold border-2 border-black bg-white text-black px-6 py-4 hover:bg-basquiat-red hover:text-white transition-colors shadow-raw">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Request Authorized Reports
+                    </a>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="border-t-4 border-black pt-6 pb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono text-[10px] md:text-xs uppercase font-bold gap-4">
+            <div>Based in Gomel, BY</div>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/in/harold-f-b-tate-22130920a" target="_blank" class="hover:text-basquiat-red transition-colors py-1">LinkedIn</a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" class="hover:text-basquiat-red transition-colors py-1">GitHub</a>
+                <a href="mailto:hbankwe@gmail.com" class="hover:text-basquiat-red transition-colors py-1">hbankwe@gmail.com</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

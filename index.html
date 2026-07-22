@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harold F. B. Tate | Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Space Mono', 'monospace'] },
+                    colors: { 'basquiat-red': '#E62600' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fdfdfd;
+            background-image: linear-gradient(to right, #00000010 1px, transparent 1px), linear-gradient(to bottom, #00000010 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Fluid shadows for mobile/desktop harmony */
+        .shadow-raw { box-shadow: 4px 4px 0px 0px #000; transition: all 0.15s ease; }
+        .shadow-raw-red { box-shadow: 4px 4px 0px 0px #E62600; transition: all 0.15s ease; }
+        @media (min-width: 768px) {
+            .shadow-raw { box-shadow: 6px 6px 0px 0px #000; }
+            .shadow-raw-red { box-shadow: 6px 6px 0px 0px #E62600; }
+        }
+        /* Tactile click effect for mechanical feel */
+        .btn-tactile:active { box-shadow: 0px 0px 0px 0px #000 !important; transform: translate(4px, 4px) !important; }
+        @media (min-width: 768px) {
+            .btn-tactile:active { transform: translate(6px, 6px) !important; }
+        }
+    </style>
+</head>
+<body class="text-black font-sans selection:bg-basquiat-red selection:text-white min-h-screen">
+
+    <!-- ELEVATION: System Status & CV Download Marquee (Full Width) -->
+    <div class="w-full border-b-4 border-black bg-basquiat-red text-white font-mono text-[10px] sm:text-xs uppercase font-bold py-2 px-4 flex flex-col sm:flex-row justify-between items-center sm:gap-4 gap-2 z-50">
+        <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap w-full sm:w-auto">
+            <span class="animate-pulse w-2 h-2 bg-white rounded-full inline-block shrink-0"></span>
+            <span class="truncate">STATUS: Open to new roles in Fullstack Engineering & Architecture.</span>
+        </div>
+        <!-- Update Resume Link Harold -->
+        <a href="https://docs.google.com/document/d/15vvQtatVs7_WdBR7vfgpiHwYV_myDOfwKBGR6rbjwZo/edit?usp=sharing" download class="border-2 border-white px-3 py-1 hover:bg-white hover:text-basquiat-red transition-colors whitespace-nowrap flex items-center gap-2 w-full sm:w-auto justify-center">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download CV
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto space-y-16 px-4 py-8 md:p-12 md:pt-8">
+        
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b-4 border-black pb-4">
+            <div class="font-mono font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 14l3-9 5 4 5-4 3 9H4z"></path><path d="M4 18h16"></path></svg>
+                Harold F. B.TATE // 2026
+            </div>
+
+            <nav class="font-mono text-xs uppercase font-bold flex flex-wrap gap-x-6 gap-y-2">
+                <a href="index.html" class="border-b-2 border-black pb-1 hover:text-basquiat-red transition-colors">01_Home</a>
+                <a href="projects.html" class="pb-1 hover:text-basquiat-red transition-colors">02_Arch</a>
+                <a href="security.html" class="pb-1 hover:text-basquiat-red transition-colors">03_Research</a>
+            </nav>
+        </header>
+
+        <main class="space-y-16">
+            <!-- Hero -->
+            <section class="relative">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-6 pr-4">
+                    Building <br>
+                    <span class="text-gray-300 relative inline-block">Software<span class="absolute top-1/2 left-0 w-full h-[4px] md:h-[6px] bg-basquiat-red -rotate-2 -translate-y-1/2"></span></span><br>
+                    Systems.
+                </h1>
+                
+                <!-- ELEVATION: Data-Driven Hero Inject -->
+                <div class="border-4 border-black bg-white p-5 md:p-6 shadow-raw-red relative z-10 md:-ml-2 mt-8 md:w-5/6 mr-2 md:mr-0">
+                    <p class="font-mono text-xs uppercase mb-3 text-basquiat-red font-bold">Log_Entry // Identity</p>
+                    <p class="text-base md:text-lg leading-relaxed font-semibold">
+                        I am a Software Engineer bridging the gap between distributed backend architecture, AI integration, and AI-powered mechatronics. 
+                    </p>
+                    <p class="mt-4 text-sm md:text-base leading-relaxed text-gray-800 border-l-2 border-basquiat-red pl-3">
+                        Specializing in Python (FastAPI/Django/Pytorch) and C-based architectures. Experienced in wrapping AI models for commercial deployment, conducting independent software audits, and delivering fault-tolerant microservices across global teams (Fluent in English, French, and Russian).
+                    </p>
+                </div>
+            </section>
+
+            <!-- Active Focus -->
+            <section class="border-4 border-black bg-black text-white p-6 md:p-8 relative overflow-hidden mt-12">
+                <div class="absolute -right-4 -top-8 opacity-10 font-mono text-8xl md:text-9xl pointer-events-none">SYS</div>
+                <h2 class="text-2xl md:text-3xl font-black uppercase mb-4 relative z-10">Current Directives</h2>
+                <div class="font-mono text-xs md:text-sm relative z-10 space-y-4 max-w-md text-gray-300">
+                    <p><span class="text-white font-bold">></span> Architecting fault-tolerant microservices for commercial deployment.</p>
+                    <p><span class="text-white font-bold">></span> Executing independent application-layer vulnerability audits.</p>
+                    <p><span class="text-white font-bold">></span> Engineering decoupled, zero-sensor cyber-physical pipelines.</p>
+                </div>
+            </section>
+
+            <!-- ELEVATION: Operational History Grid -->
+            <section>
+                <h2 class="font-mono uppercase font-bold text-lg md:text-xl mb-6 flex items-center gap-4">
+                    Operational History
+                    <span class="h-1 flex-grow bg-black"></span>
+                </h2>
+                
+                <div class="border-4 border-black bg-white shadow-raw mr-1 md:mr-0 flex flex-col">
+                    <!-- Innowise Role -->
+                    <div class="p-5 md:p-6 border-b-4 border-black flex flex-col md:flex-row justify-between md:items-start gap-4 hover:bg-gray-50 transition-colors">
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="font-black uppercase text-xl">Python Backend Engineer</h3>
+                                <span class="font-mono text-[10px] font-bold text-white bg-basquiat-red px-2 py-1">INNOWISE</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-600 mb-3">Feb 2026 — Present // Remote, PL</p>
+                            <p class="text-sm leading-relaxed text-gray-800">
+                                Engineering microservices (User, Notifications) via FastAPI & Django utilizing Clean Architecture. Orchestrating robust data pipelines and async message brokering (PostgreSQL, Redis, RabbitMQ) to ensure fault-tolerant system reliability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- NexGen Role -->
+                    <div class="p-5 md:p-6 flex flex-col md:flex-row justify-between md:items-start gap-4 hover:bg-gray-50 transition-colors">
+                        <div class="w-full">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="font-black uppercase text-xl">STEM Bootcamp Coordinator</h3>
+                                <span class="font-mono text-[10px] font-bold text-white bg-black px-2 py-1">NEXGEN</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-600 mb-3">Dec 2018 — Feb 2020 // CM</p>
+                            <p class="text-sm leading-relaxed text-gray-800">
+                                Instructed 60+ students in Machine Learning, Computer Vision (TensorFlow, OpenCV), and embedded IoT systems (Arduino/ESP32). Architected environmental monitoring and automation solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Artifacts -->
+            <section>
+                <h2 class="font-mono uppercase font-bold text-lg md:text-xl mb-6 flex items-center gap-4">
+                    Selected Architecture
+                    <span class="h-1 flex-grow bg-black"></span>
+                </h2>
+                
+                <div class="space-y-10">
+                    
+                    <!-- PROJECT 01: MAGIC CHESS -->
+                    <div class="border-2 border-black bg-white p-5 md:p-6 shadow-raw mr-1 md:mr-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-5 border-b-2 border-gray-200 pb-5">
+                            <div class="w-full md:w-2/3">
+                                <h3 class="font-black uppercase text-xl md:text-2xl mb-1">Magic Chess</h3>
+                                <p class="font-mono text-[10px] md:text-xs font-bold text-basquiat-red mb-3">AI / Mechatronics / Python / OpenCV</p>
+                                <p class="text-sm md:text-base leading-relaxed text-gray-800">A decoupled, zero-sensor cyber-physical chess system combining AI move prediction, computer vision (YOLO11n), and robotic control executing sub-50 ms asynchronous logic.</p>
+                            </div>
+                            <a href="projects.html#magic-chess" class="btn-tactile shadow-raw w-full md:w-auto text-center font-mono text-sm uppercase font-bold border-2 border-black bg-black text-white px-5 py-3 hover:bg-basquiat-red shrink-0">
+                                View Architecture
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-3 font-mono text-[10px] md:text-xs font-bold uppercase">
+                            <a href="YOUR_YOUTUBE_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-3 py-2 flex items-center gap-2 hover:bg-gray-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                System Demo
+                            </a>
+                            <a href="YOUR_GITHUB_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-3 py-2 flex items-center gap-2 hover:bg-gray-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 02: AFIDIpro -->
+                    <div class="border-2 border-black bg-white p-5 md:p-6 shadow-raw mr-1 md:mr-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-5 border-b-2 border-gray-200 pb-5">
+                            <div class="w-full md:w-2/3">
+                                <h3 class="font-black uppercase text-xl md:text-2xl mb-1">AFIDIpro</h3>
+                                <p class="font-mono text-[10px] md:text-xs font-bold text-basquiat-red mb-3">FastAPI / PostgreSQL / Migration Architecture</p>
+                                <p class="text-sm md:text-base leading-relaxed text-gray-800">Architectural modernization of a high-traffic job-seeking platform. Migrated from a monolithic TypeScript codebase to a highly secure, decoupled Python/FastAPI progressive monolith.</p>
+                            </div>
+                            <a href="projects.html#afidipro" class="btn-tactile shadow-raw w-full md:w-auto text-center font-mono text-sm uppercase font-bold border-2 border-black bg-black text-white px-5 py-3 hover:bg-basquiat-red shrink-0">
+                                View Architecture
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-3 font-mono text-[10px] md:text-xs font-bold uppercase">
+                            <a href="YOUR_LIVE_APP_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-3 py-2 flex items-center gap-2 hover:bg-gray-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                Live App
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 03: LES MARINETTES -->
+                    <div class="border-2 border-black bg-white p-5 md:p-6 shadow-raw mr-1 md:mr-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-5 border-b-2 border-gray-200 pb-5">
+                            <div class="w-full md:w-2/3">
+                                <h3 class="font-black uppercase text-xl md:text-2xl mb-1">Les Marinettes</h3>
+                                <p class="font-mono text-[10px] md:text-xs font-bold text-basquiat-red mb-3">FastAPI / Web Platform / Full-Stack</p>
+                                <p class="text-sm md:text-base leading-relaxed text-gray-800">Comprehensive end-to-end web platform bridging public-facing promotional material with secure, internal data management workflows for primary school administration.</p>
+                            </div>
+                            <a href="projects.html#les-marinettes" class="btn-tactile shadow-raw w-full md:w-auto text-center font-mono text-sm uppercase font-bold border-2 border-black bg-black text-white px-5 py-3 hover:bg-basquiat-red shrink-0">
+                                View Architecture
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-3 font-mono text-[10px] md:text-xs font-bold uppercase">
+                            <a href="https://lesmarinettes.org" target="_blank" class="btn-tactile border-2 border-black bg-white px-3 py-2 flex items-center gap-2 hover:bg-gray-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                                Live Portal
+                            </a>
+                            <a href="YOUR_GITHUB_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-3 py-2 flex items-center gap-2 hover:bg-gray-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                Backend Source
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="border-t-4 border-black pt-6 pb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono text-[10px] md:text-xs uppercase font-bold gap-4">
+            <div>Based in Gomel, BY</div>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/in/harold-f-b-tate-22130920a" target="_blank" class="hover:text-basquiat-red transition-colors py-1">LinkedIn</a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" class="hover:text-basquiat-red transition-colors py-1">GitHub</a>
+                <a href="mailto:hbankwe@gmail.com" class="hover:text-basquiat-red transition-colors py-1">hbankwe@gmail.com</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

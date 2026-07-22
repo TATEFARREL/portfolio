@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture & Case Studies | Harold F. B. Tate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- MathJax CDN for rendering LaTeX Equations -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Space Mono', 'monospace'] }, colors: { 'basquiat-red': '#E62600' } } } }
+    </script>
+    <style>
+        body { background-color: #fdfdfd; background-image: linear-gradient(to right, #00000010 1px, transparent 1px), linear-gradient(to bottom, #00000010 1px, transparent 1px); background-size: 24px 24px; scroll-behavior: smooth; }
+        .shadow-raw { box-shadow: 4px 4px 0px 0px #000; transition: all 0.15s ease; }
+        .shadow-raw-red { box-shadow: 4px 4px 0px 0px #E62600; transition: all 0.15s ease; }
+        @media (min-width: 768px) { .shadow-raw { box-shadow: 6px 6px 0px 0px #000; } .shadow-raw-red { box-shadow: 6px 6px 0px 0px #E62600; } }
+        .btn-tactile:active { box-shadow: 0px 0px 0px 0px #000 !important; transform: translate(4px, 4px) !important; }
+        @media (min-width: 768px) { .btn-tactile:active { transform: translate(6px, 6px) !important; } }
+    </style>
+</head>
+<body class="text-black font-sans selection:bg-basquiat-red selection:text-white min-h-screen">
+
+    <!-- System Status Marquee -->
+    <div class="w-full border-b-4 border-black bg-basquiat-red text-white font-mono text-[10px] sm:text-xs uppercase font-bold py-2 px-4 flex flex-col sm:flex-row justify-between items-center sm:gap-4 gap-2 z-50">
+        <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap w-full sm:w-auto">
+            <span class="animate-pulse w-2 h-2 bg-white rounded-full inline-block shrink-0"></span>
+            <span class="truncate">STATUS: Open to new roles in Fullstack Engineering & Architecture.</span>
+        </div>
+        <a href="https://docs.google.com/document/d/15vvQtatVs7_WdBR7vfgpiHwYV_myDOfwKBGR6rbjwZo/edit?usp=sharing" download class="border-2 border-white px-3 py-1 hover:bg-white hover:text-basquiat-red transition-colors whitespace-nowrap flex items-center gap-2 w-full sm:w-auto justify-center">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download CV
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto space-y-16 px-4 py-8 md:p-12 md:pt-8">
+        
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b-4 border-black pb-4">
+            <div class="font-mono font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 14l3-9 5 4 5-4 3 9H4z"></path><path d="M4 18h16"></path></svg>
+                Harold F. B. Tate // 2026
+            </div>
+            <nav class="font-mono text-xs uppercase font-bold flex flex-wrap gap-x-6 gap-y-2">
+                <a href="index.html" class="pb-1 hover:text-basquiat-red transition-colors">01_Home</a>
+                <a href="projects.html" class="border-b-2 border-black pb-1 hover:text-basquiat-red transition-colors">02_Arch</a>
+                <a href="security.html" class="pb-1 hover:text-basquiat-red transition-colors">03_Research</a>
+            </nav>
+        </header>
+
+        <main class="space-y-24">
+            
+            <!-- Page Intro & TOC -->
+            <section>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">System Architecture.</h1>
+                <p class="text-base md:text-lg leading-relaxed border-l-4 border-basquiat-red pl-4 text-gray-800 mb-8">
+                    Deep dives into software structural engineering decisions, decoupled architectures, and performance optimizations across deployed systems.
+                </p>
+                
+                <div class="border-4 border-black bg-white p-5 shadow-raw mr-1 md:mr-0">
+                    <p class="font-mono text-xs uppercase font-bold mb-3 border-b-2 border-black pb-2">Index // Quick Jump</p>
+                    <ul class="font-mono text-sm space-y-2">
+                        <li><a href="#magic-chess" class="hover:text-basquiat-red hover:underline">> 01. Magic Chess [Cyber-Physical / AI]</a></li>
+                        <li><a href="#afidipro" class="hover:text-basquiat-red hover:underline">> 02. AFIDIpro [Modular Monolith Migration]</a></li>
+                        <li><a href="#les-marinettes" class="hover:text-basquiat-red hover:underline">> 03. Les Marinettes [Full-Stack Web Platform]</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 CASE 01: MAGIC CHESS
+            =========================================== -->
+            <article id="magic-chess" class="space-y-8 scroll-mt-8">
+                <div class="border-b-4 border-black pb-4">
+                    <p class="font-mono text-xs md:text-sm uppercase font-bold text-basquiat-red mb-2">Deployed Architecture // Thesis</p>
+                    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tighter leading-none mb-4 break-words">Magic Chess.</h2>
+                </div>
+
+                <!-- Technical Diagram Placeholder -->
+                <div class="border-4 border-black bg-white aspect-[4/3] md:aspect-video flex flex-col items-center justify-center font-mono text-gray-500 shadow-raw relative mr-1 md:mr-0 p-4 text-center">
+                    <!-- Replace with <img src="your-diagram.png" class="absolute inset-0 w-full h-full object-cover"> -->
+                    <svg class="w-10 md:w-12 h-10 md:h-12 mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-xs md:text-sm">[ Placeholder: System Architecture Diagram ]</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mr-1 md:mr-0">
+                    <div class="border-2 border-black bg-white p-5 shadow-raw">
+                        <h3 class="font-black uppercase text-xl mb-3">The Objective</h3>
+                        <p class="text-sm leading-relaxed text-gray-800">Traditional digital chessboards rely on physical sensors under every square. The goal was to build a zero-sensor system relying purely on Edge AI vision and asynchronous kinematics for physical-to-digital state synchronization.</p>
+                    </div>
+                    <div class="border-2 border-black bg-black text-white p-5 shadow-raw">
+                        <h3 class="font-black uppercase text-xl mb-3">Core Stack</h3>
+                        <ul class="font-mono text-sm space-y-2">
+                            <li>> Vision: YOLO11n, OpenCV</li>
+                            <li>> Backend: Python, FastAPI</li>
+                            <li>> Engine: Stockfish 16.1</li>
+                            <li>> Hardware: Arduino, Serial IO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mr-1 md:mr-0">
+                    <h3 class="font-mono uppercase font-bold text-lg mb-4 border-b-2 border-black pb-2">Vision Confidence Algorithm</h3>
+                    <p class="text-sm leading-relaxed mb-4 text-gray-800">To prevent the robotic arm from executing erroneous moves due to lighting shifts, the vision pipeline utilizes Intersection over Union (IoU) to validate piece bounding boxes before dispatching serial commands.</p>
+                    <div class="border-2 border-black bg-white p-4 md:p-6 font-mono text-center overflow-x-auto overflow-y-hidden shadow-raw">
+                        $$ \text{IoU} = \frac{\text{Area of Overlap}}{\text{Area of Union}} = \frac{|A \cap B|}{|A \cup B|} $$
+                    </div>
+                </div>
+
+                <div class="border-l-4 border-basquiat-red pl-4 bg-white p-4 font-mono text-sm shadow-raw mr-1 md:mr-0">
+                    <strong>PERFORMANCE_METRICS:</strong><br>
+                    > Vision Accuracy: 94.2 mAP50<br>
+                    > Continuous Frame Rate: 60 FPS<br>
+                    > Logic Execution Latency: Sub-50 ms
+                </div>
+
+                <div class="flex flex-wrap gap-3 font-mono text-[10px] md:text-xs font-bold uppercase mt-6">
+                    <a href="YOUR_GITHUB_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-4 py-3 flex items-center gap-2 hover:bg-black hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> Source Code
+                    </a>
+                    <a href="YOUR_YOUTUBE_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-4 py-3 flex items-center gap-2 hover:bg-black hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> System Demo
+                    </a>
+                </div>
+            </article>
+
+            <!-- ==========================================
+                 CASE 02: AFIDIPRO
+            =========================================== -->
+            <article id="afidipro" class="space-y-8 scroll-mt-8">
+                <div class="border-b-4 border-black pb-4">
+                    <p class="font-mono text-xs md:text-sm uppercase font-bold text-basquiat-red mb-2">Modernization Architecture</p>
+                    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tighter leading-none mb-4 break-words">AFIDIpro.</h2>
+                </div>
+
+                <div class="border-4 border-black bg-white p-6 shadow-raw mr-1 md:mr-0 space-y-6">
+                    <div>
+                        <h3 class="font-black uppercase text-xl mb-2">Legacy Bottleneck</h3>
+                        <p class="text-sm leading-relaxed text-gray-800">The platform originally ran on a tightly coupled TypeScript monolith. As user traffic scaled, it suffered from severe latency spikes during heavy read-writes and lacked robust security boundaries between user cohorts.</p>
+                    </div>
+                    <div class="border-t-2 border-dashed border-gray-300 pt-6">
+                        <h3 class="font-black uppercase text-xl mb-2">The Migration Strategy</h3>
+                        <p class="text-sm leading-relaxed text-gray-800 mb-4">Led the architectural shift to a decoupled <strong>Progressive Monolith</strong>. By migrating the backend entirely to Python and FastAPI, I separated the frontend delivery from backend logic.</p>
+                        <ul class="font-mono text-xs space-y-2 border-l-4 border-black pl-3 text-gray-700">
+                            <li>> Decoupled routing from business logic.</li>
+                            <li>> Migrated data layer to highly-indexed PostgreSQL.</li>
+                            <li>> Hardened access controls and session management to OWASP standards.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 font-mono text-[10px] md:text-xs font-bold uppercase mt-6">
+                    <a href="YOUR_LIVE_APP_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-4 py-3 flex items-center gap-2 hover:bg-black hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg> Live App
+                    </a>
+                    <a href="YOUR_MEDIUM_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-4 py-3 flex items-center gap-2 hover:bg-black hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg> Read Migration Post
+                    </a>
+                </div>
+            </article>
+
+            <!-- ==========================================
+                 CASE 03: LES MARINETTES
+            =========================================== -->
+            <article id="les-marinettes" class="space-y-8 scroll-mt-8">
+                <div class="border-b-4 border-black pb-4">
+                    <p class="font-mono text-xs md:text-sm uppercase font-bold text-basquiat-red mb-2">Full-Stack Application</p>
+                    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tighter leading-none mb-4 break-words">Les Marinettes.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mr-1 md:mr-0">
+                    <div class="border-2 border-black bg-white p-5 shadow-raw">
+                        <h3 class="font-black uppercase text-xl mb-3">System Overview</h3>
+                        <p class="text-sm leading-relaxed text-gray-800">A dual-purpose platform combining a high-performance public marketing layer with a secure, authenticated internal portal for administrative workflows, student data, and yearly school activities.</p>
+                    </div>
+                    <div class="border-2 border-black bg-white p-5 shadow-raw flex flex-col">
+                        <h3 class="font-black uppercase text-xl mb-3">Architecture</h3>
+                        <ul class="font-mono text-xs space-y-2 text-gray-700 mb-4 flex-grow">
+                            <li>> Backend: FastAPI (Python)</li>
+                            <li>> Frontend: Vanilla JS / HTML / CSS</li>
+                            <li>> Workflow: Automated RBAC systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 font-mono text-[10px] md:text-xs font-bold uppercase mt-6">
+                    <a href="https://lesmarinettes.org" target="_blank" class="btn-tactile border-2 border-black bg-white px-4 py-3 flex items-center gap-2 hover:bg-black hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg> Live Portal
+                    </a>
+                    <a href="YOUR_GITHUB_LINK" target="_blank" class="btn-tactile border-2 border-black bg-white px-4 py-3 flex items-center gap-2 hover:bg-black hover:text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> Backend Source Code
+                    </a>
+                </div>
+            </article>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="border-t-4 border-black pt-6 pb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono text-[10px] md:text-xs uppercase font-bold gap-4">
+            <div>Based in Gomel, BY</div>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/in/harold-f-b-tate-22130920a" target="_blank" class="hover:text-basquiat-red transition-colors py-1">LinkedIn</a>
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" class="hover:text-basquiat-red transition-colors py-1">GitHub</a>
+                <a href="mailto:hbankwe@gmail.com" class="hover:text-basquiat-red transition-colors py-1">hbankwe@gmail.com</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
