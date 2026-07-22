@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harold F. B. Tate | Software Engineer</title>
+    <title>Harold F. B. Tate | Staff Systems Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script>
@@ -38,14 +38,13 @@
 </head>
 <body class="text-black font-sans selection:bg-basquiat-red selection:text-white min-h-screen">
 
-    <!-- ELEVATION: System Status & CV Download Marquee (Full Width) -->
+    <!-- System Status & CV Download Marquee -->
     <div class="w-full border-b-4 border-black bg-basquiat-red text-white font-mono text-[10px] sm:text-xs uppercase font-bold py-2 px-4 flex flex-col sm:flex-row justify-between items-center sm:gap-4 gap-2 z-50">
         <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap w-full sm:w-auto">
             <span class="animate-pulse w-2 h-2 bg-white rounded-full inline-block shrink-0"></span>
-            <span class="truncate">STATUS: Open to new roles in Fullstack Engineering & Architecture.</span>
+            <span class="truncate">STATUS: Open to new roles in Backend Engineering & Architecture.</span>
         </div>
-        <!-- Update Resume Link Harold -->
-        <a href="https://docs.google.com/document/d/15vvQtatVs7_WdBR7vfgpiHwYV_myDOfwKBGR6rbjwZo/edit?usp=sharing" download class="border-2 border-white px-3 py-1 hover:bg-white hover:text-basquiat-red transition-colors whitespace-nowrap flex items-center gap-2 w-full sm:w-auto justify-center">
+        <a href="YOUR_RESUME.pdf" download class="border-2 border-white px-3 py-1 hover:bg-white hover:text-basquiat-red transition-colors whitespace-nowrap flex items-center gap-2 w-full sm:w-auto justify-center">
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
             Download CV
         </a>
@@ -58,9 +57,8 @@
         <header class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-b-4 border-black pb-4">
             <div class="font-mono font-bold text-sm uppercase tracking-widest flex items-center gap-2">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 14l3-9 5 4 5-4 3 9H4z"></path><path d="M4 18h16"></path></svg>
-                Harold F. B.TATE // 2026
+                HB.TATE // 2026
             </div>
-
             <nav class="font-mono text-xs uppercase font-bold flex flex-wrap gap-x-6 gap-y-2">
                 <a href="index.html" class="border-b-2 border-black pb-1 hover:text-basquiat-red transition-colors">01_Home</a>
                 <a href="projects.html" class="pb-1 hover:text-basquiat-red transition-colors">02_Arch</a>
@@ -69,22 +67,38 @@
         </header>
 
         <main class="space-y-16">
-            <!-- Hero -->
+            <!-- Hero Section -->
             <section class="relative">
-                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-6 pr-4">
+
+                <!-- Background Image in the Hero Right Zone -->
+                <div class="absolute right-0 top-0 w-1/2 md:w-3/5 h-full pointer-events-none z-0 overflow-hidden border-2 border-black shadow-raw opacity-90 mr-2 md:mr-0">
+                    <!-- Replace YOUR_IMAGE_URL_HERE.jpg with your photo or schematic image URL -->
+                    <img src="YOUR_IMAGE_URL_HERE.jpg" 
+                         alt="Hero Overlay" 
+                         class="w-full h-full object-cover grayscale contrast-125">
+                    
+                    <!-- Dark Tint Overlay -->
+                    <div class="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
+                </div>
+
+                <!-- Text Layer -->
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-6 pr-4 relative z-10">
                     Building <br>
-                    <span class="text-gray-300 relative inline-block">Software<span class="absolute top-1/2 left-0 w-full h-[4px] md:h-[6px] bg-basquiat-red -rotate-2 -translate-y-1/2"></span></span><br>
+                    <span class="text-gray-300 relative inline-block">
+                        Software
+                        <span class="absolute top-1/2 left-0 w-full h-[4px] md:h-[6px] bg-basquiat-red -rotate-2 -translate-y-1/2"></span>
+                    </span><br>
                     Systems.
                 </h1>
                 
-                <!-- ELEVATION: Data-Driven Hero Inject -->
+                <!-- Hero Description Box -->
                 <div class="border-4 border-black bg-white p-5 md:p-6 shadow-raw-red relative z-10 md:-ml-2 mt-8 md:w-5/6 mr-2 md:mr-0">
                     <p class="font-mono text-xs uppercase mb-3 text-basquiat-red font-bold">Log_Entry // Identity</p>
                     <p class="text-base md:text-lg leading-relaxed font-semibold">
                         I am a Software Engineer bridging the gap between distributed backend architecture, AI integration, and AI-powered mechatronics. 
                     </p>
                     <p class="mt-4 text-sm md:text-base leading-relaxed text-gray-800 border-l-2 border-basquiat-red pl-3">
-                        Specializing in Python (FastAPI/Django/Pytorch) and C-based architectures. Experienced in wrapping AI models for commercial deployment, conducting independent software audits, and delivering fault-tolerant microservices across global teams (Fluent in English, French, and Russian).
+                        Specializing in Python (FastAPI/Django/PyTorch) and C-based architectures. Experienced in wrapping AI models for commercial deployment, conducting independent security audits, and delivering fault-tolerant microservices across global teams (Fluent in English, French, and Russian).
                     </p>
                 </div>
             </section>
@@ -100,7 +114,7 @@
                 </div>
             </section>
 
-            <!-- ELEVATION: Operational History Grid -->
+            <!-- Operational History Grid -->
             <section>
                 <h2 class="font-mono uppercase font-bold text-lg md:text-xl mb-6 flex items-center gap-4">
                     Operational History
@@ -138,7 +152,7 @@
                 </div>
             </section>
 
-            <!-- Project Artifacts -->
+            <!-- Selected Architecture (Projects) -->
             <section>
                 <h2 class="font-mono uppercase font-bold text-lg md:text-xl mb-6 flex items-center gap-4">
                     Selected Architecture
